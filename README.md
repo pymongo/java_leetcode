@@ -1,0 +1,26 @@
+LeetCode
+========
+
+- java_leetcode
+- [rust leetcode](/)
+- [go_leetcode](/)
+
+为什么不用C++?为什么选用以上三种语言刷leetcode？
+
+C++没有自带的项目构建工具、单元测试框架，如果想随意运行一个解法或修改自己旧的解法，就要改cmake文件，使项目变得难以维护。
+
+Rust性能与C++相当，大部分题都能和C++一样跑进0ms。
+
+而且Rust有类似npm但比npm更好用更工程化的cargo工具，cargo运行单元测试/性能测试很简单，无论rs文件在哪，只要方法名上加#\[test]就能TDD(测试驱动开发)。
+
+我习惯通过单步调试+纸笔推演去读懂别人的优秀算法，但是Rust的单步调试经常跳到汇编代码中，按半天F7/F8才能跳出来，所以需要先用Go语言去理解我不懂的算法。
+
+Java的优点不用我多说，借助maven+junit让我轻松地通过TDD的方式刷题，因为Java的语法类似C++，所有用Java也算了解用C++刷leetcode的心愿。
+
+使用Java的另一个原因是，在某些题(如two sum)上Java(1ms)的性能比Go(4ms)还好。
+
+而且很多算法资料都是Java语言的，leetcode上所有官方的题解都是以Java为主。
+
+| # | Title | Solution | Category |
+|---| ----- | -------- | ---------- |
+|1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Rust](/), [Go](/), [Java](/)|Treemap|
