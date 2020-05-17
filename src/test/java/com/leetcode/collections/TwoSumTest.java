@@ -24,23 +24,33 @@ public class TwoSumTest {
 
     // 比HashMap的解法快一半
     // 0ms解法
+    // 以「补码」的形式存储负数索引
     public static int[] twoSumBitwise(int[] nums, int target) {
         int volume = 8;        // 100000000000
         int bitMode = volume - 1; // 011111111111
         int[] result = new int[volume];
         for (int i = 0; i < nums.length; i++) {
+            // & bitMode防止相减后出现负数索引(case twoSumBitWise1)
+            // -4 & 2047 = 4
             int c = (target - nums[i]) & bitMode;
             if (result[c] != 0) {
                 return new int[]{result[c] - 1, i};
             }
             // 加1防止index=0时保存的记录被`result[c] != 0`拦截
-            result[nums[i]] = i + 1;
+            // & bitMode防止相减后出现负数索引(case twoSumBitWise2)
+            result[nums[i] & bitMode] = i + 1;
         }
         return null;
     }
 
     @Test
-    void twoSumBitWise() {
+    void twoSumBitWise2() {
+        int[] result = twoSumBitwise(new int[]{-3, 4, 3, 90}, 0);
+        Assertions.assertArrayEquals(result, new int[]{0, 2});
+    }
+
+    @Test
+    void twoSumBitWise1() {
         int[] result = twoSumBitwise(new int[]{0, 4, 3, 0}, 0);
         Assertions.assertArrayEquals(result, new int[]{0, 1});
     }
