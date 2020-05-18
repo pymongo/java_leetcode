@@ -1,9 +1,15 @@
 LeetCode
 ========
 
-- java_leetcode
-- [rust leetcode](/)
-- [go_leetcode](/)
+- [rust leetcode](https://github.com/pymongo/rust_leetcode)
+- [go_leetcode](https://github.com/pymongo/go_leetcode)
+- java_leetcode(current)
+
+| # | Title | Solution | Category |
+|---| ----- | -------- | ---------- |
+|1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Rust](https://github.com/pymongo/rust_leetcode/blob/master/src/collections/treemap_two_sum.rs), [Go](https://github.com/pymongo/go_leetcode/blob/master/collections/two_sum_test.go), [Java](https://github.com/pymongo/java_leetcode/blob/master/src/test/java/com/leetcode/collections/TwoSumTest.java)|Treemap, two's complement|
+
+---
 
 为什么不用C++?为什么选用以上三种语言刷leetcode？
 
@@ -20,7 +26,3 @@ Java的优点不用我多说，借助maven+junit让我轻松地通过TDD的方�
 使用Java的另一个原因是，在某些题(如two sum)上Java(1ms)的性能比Go(4ms)还好。
 
 而且很多算法资料都是Java语言的，leetcode上所有官方的题解都是以Java为主。
-
-| # | Title | Solution | Category |
-|---| ----- | -------- | ---------- |
-|1|[Two Sum](https://leetcode.com/problems/two-sum/)|[Rust](/), [Go](/), [Java](/)|Treemap|
