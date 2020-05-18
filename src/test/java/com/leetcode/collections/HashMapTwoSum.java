@@ -20,7 +20,7 @@ import java.util.TreeMap;
 * 所以出现了 负数补码=反码+1 也就是让负数的从-0开始全部往后挪一位
 * -0变成了-1，-7变成了-8，所以4bit寄存器有符号数的范围是[-8, 7]
 * */
-public class TwoSumTest {
+public class HashMapTwoSum {
 
     // 比HashMap的解法快一半
     // 0ms解法
@@ -63,7 +63,7 @@ public class TwoSumTest {
     // 值得一提的是，同样是暴力遍历，C语言耗时140ms，而C++耗时500+ms
     public static int[] twoSumHashMap(int[] nums, int target) {
 //        long start = System.nanoTime();
-        Map<Integer, Integer> sumTracker = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> sumTracker = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (sumTracker.containsKey(nums[i])) {
 //                System.out.println((System.nanoTime() - start) + "ns");
@@ -83,7 +83,7 @@ public class TwoSumTest {
     // leetcode:8ms
     public static int[] twoSumTreeMap(int[] nums, int target) {
         long start = System.nanoTime();
-        Map<Integer, Integer> sumTracker = new TreeMap<Integer, Integer>();
+        Map<Integer, Integer> sumTracker = new TreeMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (sumTracker.containsKey(nums[i])) {
                 System.out.println((System.nanoTime() - start) + "ns");
