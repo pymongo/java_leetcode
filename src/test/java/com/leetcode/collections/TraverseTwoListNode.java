@@ -62,8 +62,33 @@ public class TraverseTwoListNode {
         Assertions.assertArrayEquals(listNodeToArray(listNode), array);
     }
 
-//    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-//        throw new ArithmeticException("asdf");
-//    }
+    // 2ms
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode dummyHead = new ListNode();
+        ListNode current_node = dummyHead;
+        int sumOrCarry = 0;
+        while (l1 != null || l2 != null || sumOrCarry != 0) {
+            if (l1 != null) {
+                sumOrCarry += l1.val;
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                sumOrCarry += l2.val;
+                l2 = l2.next;
+            }
+            current_node.next = new ListNode(sumOrCarry % 10);
+            current_node = current_node.next;
+            sumOrCarry /= 10;
+        }
+        return dummyHead.next;
+    }
+
+    @Test
+    void testAddTwoNumbers() {
+        ListNode listNode1 = arrayToListNode(new int[]{5});
+        ListNode listNode2 = arrayToListNode(new int[]{5});
+        ListNode result = addTwoNumbers(listNode1, listNode2);
+        Assertions.assertArrayEquals(listNodeToArray(result), new int[]{0, 1});
+    }
 
 }
