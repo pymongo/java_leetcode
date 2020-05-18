@@ -26,6 +26,9 @@ public class TwoSumTest {
     // 0ms解法
     // 以「补码」的形式存储负数索引
     public static int[] twoSumBitwise(int[] nums, int target) {
+        // 2047是input case的最大值，确保：
+        // 1. a & bitMode = a;
+        // 2. -a & bitMode = bitMode-a+1()
         int volume = 8;        // 100000000000
         int bitMode = volume - 1; // 011111111111
         int[] result = new int[volume];
@@ -56,6 +59,8 @@ public class TwoSumTest {
     }
 
     // leetcode:1ms
+    // C++用的是unordered_map
+    // 值得一提的是，同样是暴力遍历，C语言耗时140ms，而C++耗时500+ms
     public static int[] twoSumHashMap(int[] nums, int target) {
 //        long start = System.nanoTime();
         Map<Integer, Integer> sumTracker = new HashMap<Integer, Integer>();
