@@ -22,10 +22,9 @@
             <scope>test</scope>
         </dependency>
 <!--        <dependency>-->
-<!--            <groupId>org.jetbrains</groupId>-->
-<!--            <artifactId>annotations</artifactId>-->
-<!--            <version>13.0</version>-->
-<!--            <scope>compile</scope>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-core</artifactId>-->
+<!--            <version>5.2.6.RELEASE</version>-->
 <!--        </dependency>-->
     </dependencies>
 
